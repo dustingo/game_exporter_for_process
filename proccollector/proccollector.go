@@ -1,7 +1,7 @@
 package proccollector
 
 import (
-	"bilibili/learn909/03process.yml/config"
+	"bilibili/learn909/03processyml/config"
 	"fmt"
 	"os/exec"
 	"strconv"

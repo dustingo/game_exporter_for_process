@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bilibili/learn909/03process.yml/proccollector"
+	"bilibili/learn909/03processyml/proccollector"
 	"flag"
 	"log"
 	"net/http"
