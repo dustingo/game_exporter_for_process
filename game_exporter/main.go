@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bilibili/learn909/03processyml/proccollector"
 	"flag"
+	"game_exporter/proccollector"
 	"log"
 	"net/http"
 

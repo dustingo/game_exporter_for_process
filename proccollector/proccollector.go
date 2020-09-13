@@ -1,8 +1,8 @@
 package proccollector
 
 import (
-	"bilibili/learn909/03processyml/config"
 	"fmt"
+	"game_exporter/config"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -52,7 +52,10 @@ func (c *GameMetrics) GrabProcessNum() (processNumData map[string]int) {
 	var cmd string
 	processNumData = make(map[string]int)
 	configPath := "./gameprocess.yml"
-	configStruct := config.GetConfig(&configPath)
+	configStruct, err := config.GetConfig(&configPath)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 	for _, v := range configStruct.Processnames {
 
 		if len(v.Cmdline) == 1 {

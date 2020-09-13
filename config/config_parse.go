@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"io/ioutil"
 
 	"gopkg.in/yaml.v2"
@@ -19,12 +18,12 @@ type Info struct {
 }
 
 // GetConfig 解析yaml，返回myconfig结构体指针
-func GetConfig(f *string) *MyConfig {
+func GetConfig(f *string) (*MyConfig, error) {
 	var myconfig = new(MyConfig)
 	yamlInfo, _ := ioutil.ReadFile(*f)
 	err := yaml.Unmarshal(yamlInfo, myconfig)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-	return myconfig
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// }
+	return myconfig, err
 }
